@@ -1,6 +1,5 @@
 package com.example.springboot.service;
 
-import com.example.springboot.dao.UserDao;
 import com.example.springboot.model.User;
 import com.example.springboot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
