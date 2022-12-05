@@ -2,6 +2,7 @@ package com.example.springboot.controller;
 
 import com.example.springboot.model.User;
 import com.example.springboot.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private UserService userService;
+    @Autowired
     public UserController(UserService userService){
         this.userService = userService;
     }
@@ -30,7 +32,7 @@ public class UserController {
         return "user-info";
     }
 
-    @GetMapping("/saveUser")
+    @PostMapping("/saveUser")
     public String saveUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
         return "redirect:/";
